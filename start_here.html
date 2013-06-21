@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+
+<script type="text/javascript">
+window.onload=function() {
+function countdown() {
+if ( typeof countdown.counter == 'undefined' ) {
+    countdown.counter = 15;
+    }
+if(countdown.counter > 0) {
+	document.getElementById('count').innerHTML = countdown.counter--;
+    setTimeout(countdown, 1000);
+    }
+else {
+    location.href = 'http://docs.lpcware.com/lpcopen/';
+    }
+}
+countdown();
+};
+</script>
+
+</head>
+<body>
+
+<h1>Welcome to the LPCOpen platform!</h1>
+<h2>This page will be re-directed to the LPCOpen online documentation at <a href="http://docs.lpcware.com/lpcopen">http://docs.lpcware.com/lpcopen</a> in <span id="count"></span> seconds.</h2>
+<i>You must have a internet connection to access the online LPCOpen documentation.</i><br>
+
+Optionally, you can download the HTML LPCOpen documentation package on the Downloadable documentation package: <a href="http://www.lpcware.com/content/nxpfile/lpcopen-platform">LPCOpen platform documentation package</a> page and use it for offline viewing on a machine that doesn't have a network connection.<br>
+</body>
+</html>
