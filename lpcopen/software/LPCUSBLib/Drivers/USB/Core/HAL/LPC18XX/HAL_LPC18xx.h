@@ -48,6 +48,8 @@
 	#define __BSS(x)       @ ".ahb_sram1"
 #elif defined(__CC_ARM)
 	#define __BSS(x)
+#elif defined(__GNUC__)
+  #define  __BSS(x) __attribute__ ((section ("x"))) = { 0 };
 #endif
 /* bit defines for DEVICEADDR register. */
 #define USBDEV_ADDR_AD  (1 << 24)
