@@ -37,7 +37,7 @@
 
 void USB_Event_Stub(void)
 {
-
+  while(1) {};
 }
 #if defined(__ICCARM__)
 void USB_Host_HostError_Event_Stub(const uint8_t ErrorCode)
