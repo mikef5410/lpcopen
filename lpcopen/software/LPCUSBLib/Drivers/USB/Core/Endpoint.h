@@ -95,7 +95,8 @@
 			#define ENDPOINT_CONTROLEP                      0
 				
 			#if defined(__LPC18XX__) || defined(__LPC43XX__)
-				#include "DCD/LPC18XX/Endpoint_LPC18xx.h"
+//				#include "DCD/LPC18XX/Endpoint_LPC18xx.h"
+				#include "Endpoint_LPC18xx.h"
 			#elif defined(__LPC175X_6X__) || defined(__LPC177X_8X__) || defined(__LPC407X_8X__)
 				#include "DCD/LPC17XX/Endpoint_LPC17xx.h"
 			#elif defined(__LPC11U1X__) || defined(__LPC11U2X_3X__) || defined(__LPC1347__)
