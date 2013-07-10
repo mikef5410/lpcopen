@@ -152,8 +152,7 @@ extern uint8_t usb_RomDriver_HID_buffer[ROMDRIVER_HID_MEM_SIZE];
 				#define USBINTR_D_UsbErrorIntEnable         (1 << 1)
 				#define USBINTR_D_PortChangeIntEnable       (1 << 2)
 				#define USBINTR_D_UsbResetEnable            (1 << 6)
-//				#define USBINTR_D_SofReceivedEnable         (1 << 7)
-				#define USBINTR_D_SofReceivedEnable         0
+				#define USBINTR_D_SofReceivedEnable         (1 << 7)
 				#define USBINTR_D_SuspendEnable             (1 << 8)
 				#define USBINTR_D_NAKEnable                 (1 << 16)
 
