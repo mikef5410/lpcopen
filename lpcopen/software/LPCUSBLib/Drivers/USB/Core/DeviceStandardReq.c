@@ -49,6 +49,8 @@ bool    USB_Device_CurrentlySelfPowered;
 bool    USB_Device_RemoteWakeupEnabled;
 #endif
 
+int SETUP_HANDLED=0;
+
 void USB_Device_ProcessControlRequest(uint8_t corenum)
 {
 //	USB_ControlRequest.bmRequestType = Endpoint_Read_8();
@@ -57,6 +59,7 @@ void USB_Device_ProcessControlRequest(uint8_t corenum)
 //	USB_ControlRequest.wIndex        = Endpoint_Read_16_LE();
 //	USB_ControlRequest.wLength       = Endpoint_Read_16_LE();
 
+        SETUP_HANDLED=1;
 	Endpoint_GetSetupPackage(corenum, (uint8_t*) &USB_ControlRequest);
 
 	EVENT_USB_Device_ControlRequest();
@@ -115,6 +118,7 @@ void USB_Device_ProcessControlRequest(uint8_t corenum)
 		Endpoint_ClearSETUP(corenum);
 		Endpoint_StallTransaction(corenum);
 	}
+        SETUP_HANDLED=0;
 }
 
 static void USB_Device_SetAddress(uint8_t corenum)
@@ -229,6 +233,7 @@ static void USB_Device_GetInternalSerialDescriptor(uint8_t corenum)
 
 	Endpoint_Write_Control_Stream_LE(corenum, &SignatureDescriptor, sizeof(SignatureDescriptor));
 	Endpoint_ClearOUT(corenum);
+
 }
 #endif
 
