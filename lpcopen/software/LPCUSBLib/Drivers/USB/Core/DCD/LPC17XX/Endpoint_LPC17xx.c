@@ -435,7 +435,7 @@ void DcdIrqHandler(uint8_t DeviceID)
 	uint32_t DevIntSt, DMAIntSt;
 
 	DevIntSt = USB_REG(DeviceID)->DevIntEn;						/* Device Interrupt Status */
-        DevIntSt &= USB_REG(DeviceID)->DevIntEn;
+        DevIntSt &= USB_REG(DeviceID)->DevIntSt;
         
 	USB_REG(DeviceID)->DevIntClr = DevIntSt;
 
